@@ -254,16 +254,7 @@ export default function HomePage() {
 // ============================================================
 function HeroSection() {
   return (
-    <section
-      className="hero-padding-mobile"
-      style={{
-        background: 'linear-gradient(135deg, rgba(10, 17, 34, 0.94) 0%, rgba(15, 30, 75, 0.88) 55%, rgba(20, 48, 120, 0.94) 100%), url("/hero-facility.jpg") center/cover no-repeat',
-        color: '#fff',
-        padding: '5rem 1.5rem 4rem',
-        position: 'relative',
-        overflow: 'hidden'
-      }}
-    >
+    <section className="hero-section">
       {/* Decorative light blooms */}
       <div style={{ position: 'absolute', top: '-10%', left: '15%', width: 450, height: 450, borderRadius: '50%', background: 'radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', bottom: '-15%', right: '5%', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(147,197,253,0.12) 0%, transparent 70%)', pointerEvents: 'none' }} />
@@ -276,71 +267,40 @@ function HeroSection() {
 
           {/* Left Column */}
           <div>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.18)', borderRadius: 9999, padding: '0.4rem 1.1rem', fontSize: '0.8rem', fontWeight: 600, marginBottom: '1.5rem', color: '#93c5fd', backdropFilter: 'blur(8px)', maxWidth: '100%' }}>
+            <div className="hero-badge">
               <span className="pulse-dot" style={{ flexShrink: 0 }} />
-              <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>Plant Operational • Fast Turnaround in Nagpur</span>
+              <span>In-House Plant • Nagpur</span>
             </div>
 
-            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.4rem)', fontWeight: 900, lineHeight: 1.14, marginBottom: '1.25rem', color: '#fff', letterSpacing: '-0.02em' }}>
-              Enterprise Printing,<br />
-              <span style={{ background: 'linear-gradient(90deg, #60a5fa, #93c5fd)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                3D Signage & Custom
-              </span><br />
+            <h1 className="hero-title">
+              Enterprise Printing,<br className="hide-mobile" />{' '}
+              <span className="hero-highlight">3D Signage & Custom</span><br className="hide-mobile" />{' '}
               Fabrication Works
             </h1>
 
-            <p style={{ fontSize: '1.02rem', lineHeight: 1.7, color: '#cbd5e1', marginBottom: '2rem', maxWidth: 540 }}>
-              Your end-to-end industrial manufacturing partner in Nagpur. From luxury embossed stationery and rigid retail packaging to illuminated 3D LED letters, vehicle wraps, and precision laser CNC fabrication.
+            <p className="hero-subtitle">
+              Your premier manufacturing partner in Nagpur. Luxury stationery, rigid packaging, illuminated 3D LED letters, vehicle wraps, and precision laser CNC fabrication.
             </p>
 
             {/* CTAs */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.875rem', marginBottom: '2.5rem' }}>
+            <div className="hero-cta-group">
               <Link
                 href="/services"
-                className="mobile-w-full"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  padding: '0.875rem 1.75rem',
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)',
-                  color: '#1e40af',
-                  borderRadius: 12,
-                  fontWeight: 700,
-                  fontSize: '0.95rem',
-                  textDecoration: 'none',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
-                  transition: 'transform 0.15s, box-shadow 0.15s'
-                }}
+                className="hero-cta-btn-primary"
               >
-                Browse All 150+ Services <ArrowRight size={17} />
+                Explore 150+ Services <ArrowRight size={16} />
               </Link>
 
               <a
                 href="#quote-estimator"
-                className="mobile-w-full"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  padding: '0.875rem 1.75rem',
-                  background: 'rgba(255,255,255,0.12)',
-                  border: '1px solid rgba(255,255,255,0.28)',
-                  color: '#fff',
-                  borderRadius: 12,
-                  fontWeight: 600,
-                  fontSize: '0.95rem',
-                  textDecoration: 'none',
-                  backdropFilter: 'blur(8px)',
-                  transition: 'background 0.15s'
-                }}
+                className="hero-cta-btn-secondary"
               >
-                <Zap size={16} color="#60a5fa" /> Instant Price Estimator
+                <Zap size={15} color="#60a5fa" /> Instant Price Estimator
               </a>
             </div>
 
             {/* Quality Badges */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', alignItems: 'center' }}>
+            <div className="hero-badges-row" style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', alignItems: 'center' }}>
               {[
                 { icon: Shield, text: 'Delta-E < 2 Color Certified' },
                 { icon: Clock, text: '24–48hr Turnaround' },
@@ -360,17 +320,9 @@ function HeroSection() {
 
               {/* Showcase 1 */}
               <div
+                className="hero-tiles-card"
                 style={{
                   background: 'linear-gradient(180deg, rgba(15,23,42,0.65) 0%, rgba(15,23,42,0.92) 100%), url("/architectural-signage.jpg") center/cover',
-                  border: '1px solid rgba(255,255,255,0.18)',
-                  borderRadius: 16,
-                  padding: '1.25rem',
-                  minHeight: 150,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
-                  transition: 'transform 0.25s, border-color 0.25s'
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -387,17 +339,9 @@ function HeroSection() {
 
               {/* Showcase 2 */}
               <div
+                className="hero-tiles-card"
                 style={{
                   background: 'linear-gradient(180deg, rgba(15,23,42,0.65) 0%, rgba(15,23,42,0.92) 100%), url("/luxury-cards.jpg") center/cover',
-                  border: '1px solid rgba(255,255,255,0.18)',
-                  borderRadius: 16,
-                  padding: '1.25rem',
-                  minHeight: 150,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
-                  transition: 'transform 0.25s, border-color 0.25s'
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -414,17 +358,9 @@ function HeroSection() {
 
               {/* Showcase 3 */}
               <div
+                className="hero-tiles-card"
                 style={{
                   background: 'linear-gradient(180deg, rgba(15,23,42,0.65) 0%, rgba(15,23,42,0.92) 100%), url("/laser-trophies.jpg") center/cover',
-                  border: '1px solid rgba(255,255,255,0.18)',
-                  borderRadius: 16,
-                  padding: '1.25rem',
-                  minHeight: 150,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
-                  transition: 'transform 0.25s, border-color 0.25s'
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -441,17 +377,9 @@ function HeroSection() {
 
               {/* Showcase 4 */}
               <div
+                className="hero-tiles-card"
                 style={{
                   background: 'linear-gradient(180deg, rgba(15,23,42,0.65) 0%, rgba(15,23,42,0.92) 100%), url("/packaging-boxes.jpg") center/cover',
-                  border: '1px solid rgba(255,255,255,0.18)',
-                  borderRadius: 16,
-                  padding: '1.25rem',
-                  minHeight: 150,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
-                  transition: 'transform 0.25s, border-color 0.25s'
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>

@@ -33,7 +33,7 @@ export default function CheckoutPage() {
         {/* Steps indicator */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
           {(['cart', 'details', 'review'] as Step[]).map((s, i) => {
-            const labels = { cart: 'Quote Cart', details: 'Your Details', review: 'Review' };
+            const labels: Record<Step, string> = { cart: 'Quote Cart', details: 'Your Details', review: 'Review', confirmed: 'Confirmed' };
             const active = s === step;
             const done = ['cart', 'details', 'review'].indexOf(step) > i;
             return (

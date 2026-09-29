@@ -352,7 +352,9 @@ function AddToQuoteModal({ category, service, onClose }: {
           <>
             <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.75rem', marginBottom: '1.5rem' }}>
               <div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--brand-blue)', fontWeight: 600, marginBottom: 4 }}>{category.icon} {category.name}</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--brand-blue)', fontWeight: 600, marginBottom: 4, display: 'flex', alignItems: 'center', gap: 4 }}>
+                  {React.createElement(category.icon, { size: 14 })} {category.name}
+                </div>
                 <h2 style={{ fontSize: '1.2rem', lineHeight: 1.25 }}>{service.name}</h2>
                 {service.startingPrice && (
                   <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', marginTop: 4 }}>Starting from ₹{service.startingPrice.toLocaleString('en-IN')}</div>

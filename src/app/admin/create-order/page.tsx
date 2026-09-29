@@ -127,7 +127,7 @@ export default function CreateOrderPage() {
                 <label htmlFor="cat">Service Category *</label>
                 <select id="cat" value={form.categoryId} onChange={e => { update('categoryId', e.target.value); update('serviceName', ''); }} required>
                   <option value="">Select category...</option>
-                  {serviceCategories.map(c => <option key={c.id} value={c.id}>{c.icon} {c.name}</option>)}
+                  {serviceCategories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
                 </select>
               </div>
               <div className="form-group">
